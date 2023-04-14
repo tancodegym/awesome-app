@@ -4,6 +4,7 @@ type Query {
     findAllBooks: [Book],
     findAllProducts: [Product]!,
     bankAccount(id: ID): BankAccount,
+    customerById(id: ID): Customer,
 }
 type Subscription {
     commentAdded(id: ID!): Book
@@ -15,6 +16,11 @@ type Mutation{
     batchCreate(books: [BookInput!]!): [Book]
     deleteBook(id: ID): Book,
     updateBook(book: BookInput!): Book,
+    insert(name: String): Customer
+}
+type Customer{
+    id: ID,
+    name: String,
 }
 type Book {
     id: ID!,

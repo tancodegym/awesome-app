@@ -35,8 +35,8 @@ dependencies {
 	implementation 'com.graphql-java:graphql-java-extended-scalars:20.0'
 //	implementation 'com.graphql-java-kickstart:graphql-java-tools:13.0.3'
 	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:14.0.0'
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
-//	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
 
 	// testing facilities
 //	testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:14.0.0'

@@ -3,6 +3,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {store} from './src/redux/store';
 import {Provider} from 'react-redux';
+import 'react-native-gesture-handler';
 import BottomTab from './src/component/Bottom';
 import {
   checkNotifications,
@@ -22,6 +23,7 @@ import {
   from,
 } from '@apollo/client';
 import {onError} from '@apollo/client/link/error';
+import LoginScreen from './src/component/Login';
 
 function App({children, theme}: any): JSX.Element {
   useEffect(() => {
@@ -104,7 +106,7 @@ function App({children, theme}: any): JSX.Element {
           theme={theme}
           colorModeManager={colorModeManager}>
           <NavigationContainer>
-            <BottomTab />
+            <LoginScreen />
           </NavigationContainer>
         </NativeBaseProvider>
       </ApolloProvider>
