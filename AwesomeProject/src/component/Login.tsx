@@ -8,6 +8,7 @@ import {
   Text,
   Pressable,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import Svg, {Image, Ellipse, ClipPath} from 'react-native-svg';
 import Animated, {
@@ -21,7 +22,6 @@ import Animated, {
   withSequence,
 } from 'react-native-reanimated';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Icon} from 'native-base';
 const {width, height} = Dimensions.get('window');
 const LoginScreen = (): JSX.Element => {
   const [isRegister, setIsRegister] = useState(false);
@@ -95,7 +95,16 @@ const LoginScreen = (): JSX.Element => {
         </Svg>
         <Animated.View
           style={[styles.closeButtonContainer, closeButtonAnimatedStyle]}>
-          <Text onPress={() => (imagePosition.value = 1)}>X</Text>
+          <TouchableOpacity
+            onPress={() => (imagePosition.value = 1)}
+            hitSlop={{
+              left: 10,
+              right: 10, // To increase press area on the right side
+              bottom: 10,
+              top: 10,
+            }}>
+            <Text>X</Text>
+          </TouchableOpacity>
         </Animated.View>
       </Animated.View>
       <View style={styles.bottomContainer}>
